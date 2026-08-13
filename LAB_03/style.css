@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    overflow:hidden;
+}
+
+body::before{
+    content:'';
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(255,255,255,0.15);
+    border-radius:50%;
+    top:-100px;
+    left:-100px;
+    animation:move 8s infinite alternate;
+}
+
+body::after{
+    content:'';
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:rgba(255,255,255,0.1);
+    border-radius:50%;
+    bottom:-80px;
+    right:-80px;
+    animation:move 10s infinite alternate-reverse;
+}
+
+@keyframes move{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(50px);
+    }
+}
+
+.login-box{
+    position:relative;
+    width:380px;
+    padding:40px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    color:white;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.login-box h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid rgba(255,255,255,0.6);
+    outline:none;
+    color:white;
+    font-size:16px;
+}
+
+.input-box label{
+    position:absolute;
+    top:12px;
+    left:0;
+    pointer-events:none;
+    transition:.3s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top:-12px;
+    font-size:12px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    background:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#msg{
+    text-align:center;
+    margin-top:15px;
+}
+
+.links{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.links a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
